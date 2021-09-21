@@ -92,3 +92,12 @@ console.log(pessoa.getIdade())
 //     marca!:string
 // }
 
+
+firtsName:String,
+lastName:String,
+username:String,
+email:String,
+password:String,
+cpf:String,
+contacto:String,
+isAdmin:Boolean){

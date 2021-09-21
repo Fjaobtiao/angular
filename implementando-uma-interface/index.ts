@@ -18,7 +18,15 @@ class User implements UserProps {
     contacto!:String
     isAdmin!:Boolean
 
-constructor(firtsName:String,lastName:String,username:String,email:String,password:String,cpf:String,contacto:String,isAdmin:Boolean){
+constructor(
+    firtsName:String,
+    lastName:String,
+    username:String,
+    email:String,
+    password:String,
+    cpf:String,
+    contacto:String,
+    isAdmin:Boolean){
     this.firtsName = firtsName
     this.lastName = lastName
     this.username = username
@@ -80,4 +88,15 @@ setIsAdmin(isAdmin:Boolean){
 
 }
 
+let pessoa = new User(
+    "Jota",
+    "Nascimento",
+    "jotabinho",
+    "jotafnascimento@gmail.com",
+    "123@456",
+    "111.111.111-11",
+    "11 9 4081-4379",
+    true
+);
 
+console.log(pessoa.getContacto())
