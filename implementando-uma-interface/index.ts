@@ -87,7 +87,7 @@ setIsAdmin(isAdmin:Boolean){
 }
 
 }
-
+ 
 let pessoa = new User(
     "Jota",
     "Nascimento",

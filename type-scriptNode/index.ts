@@ -91,13 +91,3 @@ console.log(pessoa.getIdade())
 // class Carro implements propriedadesCarros{
 //     marca!:string
 // }
-
-
-firtsName:String,
-lastName:String,
-username:String,
-email:String,
-password:String,
-cpf:String,
-contacto:String,
-isAdmin:Boolean){
