@@ -7,7 +7,7 @@ import { TarefaRoutes } from './tarefa';
 export const router : Routes = [
     {
         path: '',
-        redirectTo:'/tarefa/listar',
+        redirectTo:'tarefa/listar',
         pathMatch:'full'
     },
     ...TarefaRoutes// esse operador faz um merge (concatena) com outros arrays que possam exixtir

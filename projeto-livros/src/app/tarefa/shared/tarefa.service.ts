@@ -40,14 +40,14 @@ export class TarefaService {
     localStorage['tarefas'] = JSON.stringify(tarefas);
   }
 
-  alterarStatus(id: number):void {
-    const tarefas : Tarefa[] = this.listarTodos();
-    tarefas.forEach((obj,index,objs)=>{
-      if (id === obj.id){
-        objs[index].estoque = !obj.estoque;
-      }
-    });
-    localStorage['tarefas'] = JSON.stringify(tarefas);
-  }
+  // alterarStatus(id: number):void {
+  //   const tarefas : Tarefa[] = this.listarTodos();
+  //   tarefas.forEach((obj,index,objs)=>{
+  //     if (id === obj.id){
+  //       objs[index].estoque = !obj.estoque;
+  //     }
+  //   });
+  //   localStorage['tarefas'] = JSON.stringify(tarefas);
+  // }
 
 }

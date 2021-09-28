@@ -1,1 +1,248 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.logo {
+  width: 100%;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.logo img {
+  width: 50%;
+  height: auto;
+  margin: 10px;
+}
+
+a.navbar-brand {
+  text-align: center;
+  width: 100%;
+  padding: 30px;
+  font-size: 30px;
+}
+
+.breadcrumb {
+  background: url('assets/images/6_1920x.jpg');
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 100px !important;
+}
+
+.breadcrumb h1 {
+  color: #E5E2DA;
+  padding: 100px 0;
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 1px;
+}
+
+tr.tittab {
+  background-color: #4C3D31 !important;
+  color: #E5E2DA;
+}
+
+tr.tittab th {
+  padding: 23px 16px 4px 16px !important;
+  text-align: center;
+  font-weight: inherit;
+  letter-spacing: 1px;
+}
+
+tr.tittab th:last-child {
+  padding: 16px !important;
+}
+
+a.btn.btn-xs.btn-success {
+  background: #5D6F7F;
+  border: 0;
+  padding: 10px 35px;
+  transition: .2s;
+}
+
+a.btn.btn-xs.btn-success:hover {
+  background: #296F7F;
+  color: #E5E2DA;
+}
+
+tr.listlivros td {
+  padding: 16px !important;
+}
+
+a.btn.btn-xs.btn-danger {
+  background: #A0907F;
+  border: none;
+  padding: 10px;
+  margin: 0 2px;
+  transition: .2s;
+}
+
+a.btn.btn-xs.btn-danger:hover {
+  background: #C29871;
+}
+
+a.btn.btn-xs.btn-info {
+  background: #AC6B53;
+  border: none;
+  padding: 10px;
+  margin: 0 2px;
+  transition: .2s;
+}
+
+a.btn.btn-xs.btn-info:hover {
+  background: #C29871;
+}
+
+.checkbox {
+  display: inline-flex;
+  cursor: pointer;
+  position: relative;
+}
+
+.checkbox>span {
+  color: #34495E;
+  padding: 0.5rem 0.25rem;
+}
+
+.checkbox>input {
+  height: 25px;
+  width: 25px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  border: 1px solid #4C3D31;
+  border-radius: 4px;
+  outline: none;
+  transition-duration: 0.3s;
+  background-color: #C29871;
+  cursor: pointer;
+}
+
+.checkbox>input:checked {
+  border: 1px solid #C29871;
+  background-color: #4C3D31;
+}
+
+.checkbox>input:checked+span::before {
+  content: '\2713';
+  display: block;
+  text-align: center;
+  color: #C29871;
+  position: absolute;
+  left: 0.7rem;
+  top: 0.2rem;
+}
+
+.checkbox>input:active {
+  border: 2px solid #4C3D31;
+}
+
+
+input {
+  padding: 30px !important;
+  border-radius: 0 !important;
+  background: #F8F7F6 !important;
+  border-top: none !important;
+  border-right: none !important;
+  border-left: none !important;
+  font-size: 14px !important;
+}
+
+button.butcadliv {
+  font-size: 16px;
+  font-style: normal;
+  line-height: 22px;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: transparent;
+  border-width: 3px !important;
+  border-style: solid;
+  padding: 0.9em 1.7em;
+  font-weight: 300;
+  letter-spacing: 1px;
+  transition: .2s;
+  margin-top: 50px;
+}
+button.butcadliv:hover {
+    font-size: 16px;
+    font-style: normal;
+    line-height: 22px;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: #767676;
+    border: 3px solid #767676 !important;
+    color: #FFF;
+    padding: 0.9em 1.7em;
+    font-weight: 300;
+    letter-spacing: 1px;
+
+}
+
+a.butaceliv {
+  font-size: 16px;
+  font-style: normal;
+  line-height: 22px;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: #767676;
+  border: 3px solid #767676 !important;
+  color: #FFF;
+  padding: 0.9em 1.7em;
+  font-weight: 300;
+  letter-spacing: 1px;
+  transition: .2s;
+  margin-top: 50px;
+}
+
+a.butaceliv:hover {
+  font-size: 16px;
+  font-style: normal;
+  line-height: 22px;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: transparent;
+  border-width: 3px !important;
+  border-style: solid;
+  padding: 0.9em 1.7em;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: #767676;
+}
+
+
+footer {
+    background: #272626;
+    padding: 35px 0;
+    margin-top: 100px;
+    color: #FFF;
+    text-align: center;
+}
+#subirTopo {
+    text-decoration: none;
+    background: #b57f69;
+    bottom: 30px;
+    right: 30px;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    padding: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: fixed;
+    border: 0;
+    font-family: sans-serif;
+    opacity: .8;
+    }
+    
+    #subirTopo:hover {
+    opacity:1;
+    }
