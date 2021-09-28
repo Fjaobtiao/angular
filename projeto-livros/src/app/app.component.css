@@ -1,0 +1,16 @@
+.logo {width: 100%;
+text-align: center;
+margin: 20px 0;}
+.logo img {
+  width: 50%;
+  height: auto;
+  margin: 10px;
+}
+
+a.navbar-brand {
+  text-align: center;
+  width: 100%;
+  padding: 30px;
+  font-size: 30px;
+}
+
