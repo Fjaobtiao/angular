@@ -1,0 +1,158 @@
+28.09.2021
+**cadastrar
+1)criar componente - dentro de tarefas vai criar o componente cadastrar-tarefa
+
+>ng g component tarefas/cadastrar-tarefa
+		no caso de erro:ng g c tarefas/cadastrar-tarefa --module app
+
+2)renomear essa pasta criada para cadastrar e criar um index.ts dentro dele:
+fazer as exportações:
+export * from './cadastrar-tarefa.component';
+
+3)Verificar se a importação foi feita em tarefas.module.ts
+import { CadastrarTarefaComponent } from './cadastrar';
+
+declarations: [
+    ListarTarefaComponent,
+    CadastrarTarefaComponent
+  ],
+
+então tarefas.module.ts deve estar assim agora:
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { TarefaService } from './shared';
+import { ListarTarefaComponent } from './listar';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { CadastrarTarefaComponent } from './cadastrar';
+
+@NgModule({
+  declarations: [
+    ListarTarefaComponent,
+    CadastrarTarefaComponent
+  ],
+  imports: [
+    CommonModule,
+    RouterModule,
+    FormsModule
+  ],
+  providers:[
+    TarefaService
+  ]
+})
+export class TarefasModule { }
+
+4)no index.ts da raiz (tarefas):
+export * from './tarefas.module';
+export * from './shared';
+export * from './tarefas-routing.module';
+fazer essa adição: export * from './cadastrar';
+
+
+5)adicionar a rota de cadastto em tarefas-routing.module.ts
+
+import { Routes } from '@angular/router';
+import { CadastrarTarefaComponent } from './cadastrar';
+import { ListarTarefaComponent } from './listar';
+
+export const TarefaRoutes: Routes = [
+    { 
+        path:'tarefas',
+        redirectTo: 'tarefas/listar'
+    }, 
+    
+    { 
+        path:'tarefas/listar',
+        component: ListarTarefaComponent
+    },
+
+    { 
+        path:'tarefas/cadastrar',
+        component: CadastrarTarefaComponent 
+    }
+];
+
+
+6)passar o caminho /tarefas/listar no navegador
+>http://localhost:4200/tarefas/cadastrar
+
+7) usar a diretiva de rotas para direcionar
+<a class="btn btn-xs btn-success" [routerLink]="['/tarefas/cadastrar']">
+	<span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Novo
+</a>
+
+8)cadastrar-tarefa.component.html
+colocar o html aqui >><form #formTarefa="ngForm">  //é a referencia ao @viewChild que irá em cadastrar-tarefa.component.ts
+
+9)em cadastrar-tarefa.component.ts:
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import{ TarefaService,Tarefa} from '../shared';
+import { Router} from "@angular/router";
+
+
+@Component({
+  selector: 'app-cadastrar-tarefa',
+  templateUrl: './cadastrar-tarefa.component.html',
+  styleUrls: ['./cadastrar-tarefa.component.css']
+})
+export class CadastrarTarefaComponent implements OnInit {
+
+  @ViewChild ('formTarefa', {static:true}) formTarefa: NgForm; //vai permitir a validação - só autoriza envio de campos sem erro
+  tarefa: Tarefa;
+  constructor(private tarefaService: TarefaService, private router: Router) { }
+
+  ngOnInit(): void {
+    this.tarefa = new Tarefa();
+  }
+
+  // chamar o método cadastrar
+  cadastrar():void{
+    if(this.formTarefa.form.valid){
+      this.tarefaService.cadastrar(this.tarefa);
+      this.router.navigate(["/tarefas"]);
+    }
+  }
+
+}
+
+10)
+ <h1>Cadastrar tarefa</h1>
+
+<div class="well">
+    <form #formTarefa="ngForm">
+        <div class="form-group">
+            <label for="nome">Tarefa:</label>
+            <input type="text" class="form-control" id="nome" name="nome" 
+            [(ngModel)]="tarefa.nome" #nome="ngModel" minlength="5"
+                required>
+            <div *ngIf="nome.errors && (nome.dirty || nome.touched)" class="alert alert-danger">
+                <div [hidden]= "!nome.errors.required">
+                    Digite a tarefa.
+                </div>
+                <div [hidden]= "!nome.errors.minlength">
+                    A tarefa deve conter ao menos 5 caracteres.
+                </div>
+            </div>
+        </div>
+        <div class="form-group text-center">
+            <input type="submit" class="btn btn-success" (click)="cadastrar()" value="Cadastrar" [disabled]="!formTarefa.form.valid">
+            <a class="btn btn-default" [routerLink]="['/tarefas']">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Voltar
+            </a>
+        </div>
+    </form>
+</div>
+
+
+11)em listar-tarefa.component.ts  incluir:
+
+ alterarStatus(tarefa:Tarefa):void{
+    if(confirm('Deseja alterar o status da Tarefa"'+tarefa.nome+'"?')){ 
+      this.tarefaService.alterarStatus(tarefa.id);
+      this.listarTodos();
+    }
+}
+
+12) no checkbox de listar-livro.component.html:
+<input type="checkbox" [value]="tarefa.id" [checked]="tarefa.concluida" (click)="alterarStatus(tarefa)">

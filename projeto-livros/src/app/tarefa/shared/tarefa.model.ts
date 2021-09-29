@@ -6,7 +6,8 @@ export class Tarefa {
         public autor?: string,
         public isbn?: string,
         public edicao?: string,
-        public editora?: string
+        public editora?: string,
+        public estoque?: boolean
     ){
 
     }

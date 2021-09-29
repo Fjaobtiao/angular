@@ -9,7 +9,7 @@ import { TarefaService, Tarefa } from '../shared';
 })
 export class ListarTarefaComponent implements OnInit {
 
-  tarefas: Tarefa[]; // Essa tarefa bem lá de Models
+  tarefas: Tarefa[]; // Essa tarefa vem lá de Models
 
   constructor(private tarefaService : TarefaService) { }
 
@@ -21,5 +21,12 @@ export class ListarTarefaComponent implements OnInit {
   listarTodos(): Tarefa[] {
     return this.tarefaService.listarTodos();
   }
+
+  alterarStatus(tarefa:Tarefa):void{
+    if(confirm('Deseja alterar o status do estoque do livro"'+tarefa.titulo+'"?')){ 
+      this.tarefaService.alterarStatus(tarefa.id);
+      this.listarTodos();
+    }
+}
 
 }

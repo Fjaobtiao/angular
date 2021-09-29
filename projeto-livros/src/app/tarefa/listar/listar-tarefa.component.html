@@ -22,6 +22,7 @@
             <th scope="col">ISBN</th>
             <th scope="col">Edição</th>
             <th scope="col">Editora</th>
+            <th scope="col">Em Estoque</th>
             <th scope="col">
               <a class="btn btn-xs btn-success" [routerLink]="['/tarefa/cadastrar']">
                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Novo
@@ -37,6 +38,7 @@
             <td scope="row">{{ tarefa.isbn }}</td>
             <td scope="row">{{ tarefa.edicao }}</td>
             <td scope="row">{{ tarefa.editora }}</td>
+            <td><input type="checkbox" [value]="tarefa.id [checked]="tarefa.estoque" (click)="alterarStatus(tarefa)"></td>
 
             <td scope="row">
               <a title="Editar" alt="Editar" class="btn btn-xs btn-info">
