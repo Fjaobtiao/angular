@@ -33,17 +33,19 @@
         private middlewares (): void {
             this.express.use(express.json())
             this.express.use(express.urlencoded({ extended: true}))
-            this.express.use(express.static(__dirname+"\\public"))
+            this.express.use(express.static(__dirname+"/public"))
         }
 
         private database (): void {
             mongoose.Promise = global.Promise;
-            mongoose.connect("mongodb+srv://lucas_cqn:goldship666@cluster0.xn84s.mongodb.net/CqnBank?retryWrites=true&w=majority")
+            mongoose.connect("mongodb+srv://jota_nascimento:jota_nascimento@cluster0.nzbq2.mongodb.net/SoulBank?retryWrites=true&w=majority")
         }
+
+        
 
         private layout (): void {
             this.express.use(layouts);
-            this.express.set("views", __dirname+"\\views")
+            this.express.set("views", __dirname+"/views")
             this.express.set("layout", "./layouts/main");
             this.express.set("view engine", "ejs");
         }

@@ -1,14 +1,43 @@
-<form action="/criarConta" method="POST">
-    <label for="nome">Nome</label>
-    <input class="form-control" type="text" name="nome" id="nome">
-    <label for="cpf">CPF</label>
-    <input class="form-control" type="text" name="cpf" id="cpf">
-    <label for="agencia">AGENCIA</label>
-    <input class="form-control" type="text" name="agencia" id="agencia">
-    <label for="conta">CONTA</label>
-    <input class="form-control" type="text" name="conta" id="conta">
-    <label for="senha">SENHA</label>
-    <input class="form-control" type="text" name="senha" id="senha">
-    <input class="form-control" type="hidden" value="0" name="saldo" id="saldo">
-    <button type="submit" class="btn btn-success">ENVIAR</button>
-</form>
+<div class="page">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <h1>Crie sua Conta</h1>
+                <h3>Tenha sucesso financeiro a partir de agora</h3>
+
+                <form action="/criarConta" method="POST">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <input class="form-control" type="text" name="nome" id="nome" placeholder="Nome:">
+                        </div>
+                        <div class="col-lg-6">
+                            <input class="form-control" type="text" name="cpf" id="cpf" placeholder="CPF:">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <input class="form-control" type="text" name="agencia" id="agencia" placeholder="Agencia:">
+                        </div>
+                        <div class="col-lg-4">
+                            <input class="form-control" type="text" name="conta" id="conta" placeholder="Conta:">
+                        </div>
+                        <div class="col-lg-4">
+                            <input class="form-control" type="text" name="senha" id="senha" placeholder="Senha:">
+                            <input class="form-control" type="hidden" value="0" name="saldo" id="saldo">
+                        </div>
+                    </div>                    
+                    <div class="row">
+                        <div class="col-lg-12">
+                        <button type="submit" class="butform">ENVIAR</button>
+                        </div>
+                    </div>
+                    
+                    
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

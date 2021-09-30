@@ -33,17 +33,19 @@
          middlewares () {
             this.express.use(_express2.default.json())
             this.express.use(_express2.default.urlencoded({ extended: true}))
-            this.express.use(_express2.default.static(__dirname+"\\public"))
+            this.express.use(_express2.default.static(__dirname+"/public"))
         }
 
          database () {
             _mongoose2.default.Promise = global.Promise;
-            _mongoose2.default.connect("mongodb+srv://lucas_cqn:goldship666@cluster0.xn84s.mongodb.net/CqnBank?retryWrites=true&w=majority")
+            _mongoose2.default.connect("mongodb+srv://jota_nascimento:jota_nascimento@cluster0.nzbq2.mongodb.net/SoulBank?retryWrites=true&w=majority")
         }
+
+        
 
          layout () {
             this.express.use(_expressejslayouts2.default);
-            this.express.set("views", __dirname+"\\views")
+            this.express.set("views", __dirname+"/views")
             this.express.set("layout", "./layouts/main");
             this.express.set("view engine", "ejs");
         }

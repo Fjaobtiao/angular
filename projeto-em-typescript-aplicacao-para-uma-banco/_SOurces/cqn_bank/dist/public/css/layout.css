@@ -1,35 +1,105 @@
-header, .navbar {
-    background-color: #6c336d;
+body {
+    background: url('/images/bg-home.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400 !important;
+}
+
+header {
+    box-shadow: 0px 0px 24px rgb(0 0 0 / 10%);
+    -webkit-box-shadow: 0px 0px 24px rgb(0 0 0 / 10%);
+    -moz-box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.1);
+    background: #FFF;
+}
+
+.logo {
+    padding: 30px 0;
 }
 
 header span {
-    color: #F2F08A;
+    color: #272727;
 }
 
-main {
-    background-color: #f2f08a38;
-    min-height: 85vh;
+.page.home {
+    text-align: center;
+    margin-top: 180px;
+}
+
+.desctext {
+    text-transform: uppercase;
+    color: #B6A283;
+    white-space: nowrap;
+    line-height: 38px;
+    letter-spacing: 2px;
+    font-weight: 400;
+    font-size: 38px;
+    position: relative !important;
+}
+
+.desc {
+    font-family: Poppins;
+    text-transform: uppercase;
+    color: #FFF !important;
+    text-align: inherit;
+    line-height: 102px;
+    letter-spacing: 8px;
+    font-weight: bold;
+    font-size: 102px;
+}
+
+.page {
+    padding: 50px 0;
+}
+
+.page h1,
+.page h3 {
+    color: #FFF;
+}
+
+.page h3 {
+    margin-bottom: 70px;
+}
+
+input {
+    border-radius: 0 !important;
+    margin-bottom: 30px !important;
+    padding: 34px !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+}
+
+.butform {
+    background: linear-gradient(rgb(131, 102, 62) 0%, rgb(176, 150, 106) 100%);
+    font-family: Poppins;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-sizing: border-box;
+    color: #FFF;
+    text-decoration: none;
+    line-height: 17px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-size: 12px;
+    border-color: transparent;
+    padding: 14px 17px 16px 23px;
+    border-radius: 3px;
+    opacity: 1;
+    transform: translate(0px, 0px);
+    visibility: visible;
+    border-style: none;
 }
 
 footer {
-    background-color: #6c336d;
-    min-height: 10vh;  
+    background-color: #1D1D1D;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
 }
 
-footer p{
+footer p {
     font-size: 20px;
-    color: #F2F08A;
-}
-
-footer a {
-    color: #F2F08A;
-}
-
-footer a:hover {
-    text-decoration: none;
-    color: #46A65F;
-}
-
-h1 {
-    color: #6c336d;
+    color: #FFF;
 }
