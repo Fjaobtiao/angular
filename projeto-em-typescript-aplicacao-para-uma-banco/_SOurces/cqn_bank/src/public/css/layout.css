@@ -1,7 +1,5 @@
 body {
-    background: url('/images/bg-home.jpg');
-    background-position: center;
-    background-size: cover;
+
     height: 100vh;
     font-family: 'Poppins', sans-serif;
     font-weight: 400 !important;
@@ -24,7 +22,10 @@ header span {
 
 .page.home {
     text-align: center;
-    margin-top: 180px;
+    padding: 280px 0;
+    background: url('/images/bg-home.jpg');
+    background-position: center;
+    background-size: cover;
 }
 
 .desctext {
@@ -50,7 +51,10 @@ header span {
 }
 
 .page {
-    padding: 50px 0;
+    padding: 150px 0;
+    background: url('/images/bg-home.jpg');
+    background-position: center;
+    background-size: cover;
 }
 
 .page h1,
@@ -60,6 +64,17 @@ header span {
 
 .page h3 {
     margin-bottom: 70px;
+}
+
+.page p {color: #FFF;}
+
+.bordercont {
+    border: 1px solid #FFF;
+    padding: 30px;
+    margin: 30px 0;
+}
+.bordercont label {
+    color: #FFF;
 }
 
 input {
@@ -92,14 +107,13 @@ input {
 
 footer {
     background-color: #1D1D1D;
-    position: absolute;
-    bottom: 0;
+
     width: 100%;
     text-align: center;
     padding: 20px 0;
 }
 
-footer p {
+footer {
     font-size: 20px;
     color: #FFF;
 }

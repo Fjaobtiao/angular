@@ -1,36 +1,63 @@
-<section>
-    <p class="text-center">Olá <%= userInfo.nome %> seja bem vindo!</p>
-    <p class="text-center">Agência <%= userInfo.idBank.substring(1, 4) %></p>
-    <p class="text-center">Conta: <%= userInfo.idBank.substring(5, userInfo.idBank.length) %></p>
-    <p class="text-center">Saldo: R$ <%= userInfo.saldo %></p>
-    <p class="text-center">CPF: <%= userInfo.cpf %></p>
-    
-    
-    <form action="user/deposito" method="POST">
-        
-        <label for="valorDeposito">VALOR A SER DEPOSITADO R$:</label>
-        <input class="form-control" type="number" name="valorDeposito" id="valorDeposito">
-        <button class="btn btn-success">DEPOSITAR</button>
-        
-    </form>
-    
-    <form action="user/saque" method="POST">
-    
-        <label for="valorSaque">VALOR A SER SACADO R$:</label>
-        <input class="form-control" type="number" name="valorSaque" id="valorSaque">
-        <button class="btn btn-success">SACAR</button>
+<div class="page">
 
-    </form>
-    
-    <form action="user/transferir" method="POST">
-    
-        <label for="valorTranferir">VALOR A SER DEPOSITADO R$:</label>
-        <input class="form-control" type="number" name="valorTranferir" id="valorTranferir">
-        <label for="contaTransferir">INFORME O CPF DO RECEPTOR</label>
-        <input class="form-control" type="number" name="contaTransferir" id="contaTransferir">
-        
-        <button class="btn btn-success">TRANSFERIR</button>
 
-    </form>
 
-</section>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Olá <%= userInfo.nome %> seja bem vindo!</p>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-lg-3">
+                    <p>Agência: <%= userInfo.idBank.substring(1, 4) %></p>
+                </div>
+                <div class="col-lg-3">
+                    <p>Conta: <%= userInfo.idBank.substring(5, userInfo.idBank.length) %></p>
+                </div>
+                <div class="col-lg-3">
+                    <p>CPF: <%= userInfo.cpf %></p>
+                </div>
+                <div class="col-lg-3">
+                    <p>Saldo: R$ <%= userInfo.saldo %></p>
+                </div>
+            </div>
+
+            <div class="row bordercont">
+                <div class="col-lg-6">
+                    <form action="user/deposito" method="POST">
+                        <label for="valorDeposito">VALOR A SER DEPOSITADO R$:</label>
+                        <input class="form-control" type="number" name="valorDeposito" id="valorDeposito">
+                        <button class="butform">DEPOSITAR</button>
+                    </form>
+                </div>
+                <div class="col-lg-6">
+                    <form action="user/saque" method="POST">
+                        <label for="valorSaque">VALOR A SER SACADO R$:</label>
+                        <input class="form-control" type="number" name="valorSaque" id="valorSaque">
+                        <button class="butform">SACAR</button>
+                    </form>
+                </div>
+            </div>
+
+
+            <div class="bordercont">
+                <form action="user/transferir" method="POST">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <label for="valorTranferir">VALOR A SER TRANSFERIDO R$:</label>
+                            <input class="form-control" type="number" name="valorTranferir" id="valorTranferir">
+                        </div>
+                        <div class="col-lg-6">
+                            <label for="contaTransferir">INFORME O CPF DO RECEPTOR</label>
+                            <input class="form-control" type="number" name="contaTransferir" id="contaTransferir">
+                        </div>
+                    </div>
+                    <button class="butform">TRANSFERIR</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
