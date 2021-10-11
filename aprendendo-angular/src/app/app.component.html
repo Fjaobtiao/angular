@@ -1,0 +1,64 @@
+
+<header id="head">
+  <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand" [routerLink]="['/home']"><img src="../assets/images/logo.png"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+
+          <li class="nav-item"><a class="nav-link" [routerLink]="['/databiding']">Data Binding</a></li>
+          <li class="nav-item"><a class="nav-link" [routerLink]="['/angularcli']">Angular Cli</a></li>
+          <li class="nav-item"><a class="nav-link" [routerLink]="['/diretivas']">Diretivas</a></li>
+          <li class="nav-item"><a class="nav-link" [routerLink]="['/services']">Services</a></li>
+          <li class="nav-item"><a class="nav-link" [routerLink]="['/pipes']">Filter & Pipes</a></li>
+
+        </ul>
+      </div>
+    </nav>
+</header>
+
+<router-outlet></router-outlet>
+
+<footer>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3"><img src="../assets/images/logo-footer.png" style="width: 200px;"></div>
+    <div class="col-lg-3">
+      <h3 class="widget-title">Links Rápidos</h3>
+      <div class="menufooter">
+        <ul>
+          <li><a [routerLink]="['/databiding']">Data Building</a></li>
+          <li><a [routerLink]="['/angularcli']">Angular Cli</a></li>
+          <li><a [routerLink]="['/diretivas']">Diretivas</a></li>
+          <li><a [routerLink]="['/services']">Services</a></li>
+          <li><a [routerLink]="['/pipes']">Filter & Pipes</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="col-lg-3">
+      <h3 class="widget-title">Social</h3>
+      <div class="menufooter">
+        <ul>
+          <li><a href="https://www.linkedin.com/in/jota-nascimento-7ab95b16a/" target="_blank">LinkedIn</a></li>
+          <li><a href="https://www.behance.net/jotanascimento" target="_blank">Behance</a></li>
+          <li><a href="https://www.facebook.com/jotafnascimento/" target="_blank">Facebook</a></li>
+          <li><a href="https://www.instagram.com/jotafnascimento/" target="_blank">Instagram</a></li>
+          <li><a href="https://github.com/Fjaobtiao" target="_blank">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <h3 class="widget-title">Contato</h3>
+      <div class="menufooter">
+        <p><i class="fa fa-envelope"></i> <a href="mailto:jotafnascimento@gmail.com">jotafnascimento@gmail.com</a></p>
+        <p><i class="fa fa-phone-square"></i> <a href="callto:+5511940814379">(11) 9 4081-4379</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+</footer>
+

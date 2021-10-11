@@ -1,0 +1,741 @@
+<div class="bread" style="background-color: rgb(196, 200, 202);
+height: 600px;
+color: rgb(255, 255, 255);
+background-image: url(../../assets/images/bg-top-05.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+background-attachment: scroll;
+background-position: center center;
+padding-top: 35px;
+margin-top: -200px">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1>Angular Cli</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<main class="pageinter">
+  <section class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="titpage">Iniciando um Projeto com Angular</div>
+        <p>Muito podem achar difícil a tarefa de iniciar um projeto em Angular: precisamos criar a estrutura inicial de
+          pastas, criar o componente raiz, módulos, arquivos de configuração, etc. </p>
+        <p>Outra dúvida recoreente é sobre que servidor HTTP utilizar para testar a aplicação.</p>
+        <p>Mas não se preocupe. Seguinte esse passo a passo, tudo fica mais fácil de ser entendido:</p>
+      </div>
+    </div>
+
+    <h2>Criando e executando um projeto com Angular CLI</h2>
+
+    <h3>ng new <code>&lt;nome do projeto&gt;</code></h3>
+    <p>Utilizamos o comando <strong>ng new</strong> para criar um novo projeto em Angular. Ao executar esse comando,
+      será criada uma nova pasta contendo uma estrutura de diretórios com os arquivos necessários para iniciar um
+      projeto nesse framework.</p>
+
+
+    <pre class="linhacodigo">
+        1| ng new aprendendo-angular
+    </pre>
+
+    <figure class="lazy-img">
+      <img class="imagem_artigo loaded" alt="Estrutura de diretórios" src="../../assets/images/estrutura-ng-new.jpg">
+      <figcaption>
+        Estrutura de diretórios criada para o projeto
+      </figcaption>
+    </figure>
+
+    <p>Essa é a estrutura indicada pela equipe do Angular, portanto, embora seja possível alterá-la, sugerimos mantê-la.
+      Entre essas pastas, aquela que será mais utilizada pelos desenvolvedores é a src/app, pois é nela onde
+      encontram-se todos os arquivos do projeto, como arquivos referentes aos componentes, diretivas, filtros e módulos
+      da aplicação. Para mais informações sobre o objetivo das demais pastas, consulte a tabela abaixo.</p>
+
+
+    <div class="responsive-table">
+      <div class="responsive-table">
+        <table>
+          <thead>
+            <tr>
+              <th>
+                Pasta
+              </th>
+              <th>
+                Uso
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                node_modules
+              </td>
+              <td>
+                Dependências do Node.JS necessárias no
+                projeto.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                src/assets
+              </td>
+              <td>
+                Recursos externos do projeto, como CSS,
+                imagens, bibliotecas JavaScript, etc.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                src/environments
+              </td>
+              <td>
+                Configuração dos ambientes da aplicação
+                (desenvolvimento, produção, etc).
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <p><strong>Parâmetros</strong></p>
+
+    <p>O comando ng new pode receber alguns parâmetros, que estão detalhados na tabela abaixo.</p>
+
+    <div class="responsive-table">
+      <div class="responsive-table">
+        <table>
+          <thead>
+            <tr>
+              <th>
+                Parâmetro
+              </th>
+              <th>
+                Descrição
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                --directory &lt;diretório&gt;
+              </td>
+              <td>
+                Informar o nome do diretório no qual a
+                estrutura de pastas do projeto será criada.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                --dry-run
+              </td>
+              <td>
+                Caso o diretório do projeto já exista,
+                não modificar os arquivos que já foram editados manualmente. Valor padrão:
+                falso.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                --inline-style
+              </td>
+              <td>
+                Colocar os estilos (CSS) inline, dentro
+                dos arquivos Typescript, ao invés de criar um arquivo em separado para eles.
+                Valor padrão: falso.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                --inline-template
+              </td>
+              <td>
+                Colocar os templates inline, dentro dos
+                arquivos Typescript, ao invés de criar um arquivo em separado. Valor padrão:
+                falso.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                --prefix &lt;prefixo&gt;
+              </td>
+              <td>
+                Definir o prefixo que deve ser usado
+                para todos os seletores de componentes da aplicação. Valor padrão: app.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                --routing
+              </td>
+              <td>
+                Criar um módulo à parte, no qual serão
+                definidas as rotas da aplicação. Valor padrão: falso.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                --skip-git
+              </td>
+              <td>
+                Evitar a criação do repositório git
+                para o projeto. Valor padrão: falso.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                --skit-commit
+              </td>
+              <td>
+                Evitar o primeiro commit no repositório
+                git do projeto. Valor padrão: falso.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                --skip-install
+              </td>
+              <td>
+                Não fazer a instalação dos pacotes
+                necessários para o projeto usando o npm. Valor padrão: falso.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                --skip-tests
+              </td>
+              <td>
+                Evitar que sejam criados os arquivos de
+                teste.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                --source-dir &lt;diretório&gt;
+              </td>
+              <td>
+                Definir o nome do diretório onde serão
+                criados os arquivos fonte da aplicação. Valor padrão: src.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                --style &lt;nome&gt;
+              </td>
+              <td>
+                Definir a extensão padrão para os
+                arquivos de estilo. Valor padrão: css.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                --verbose
+              </td>
+              <td>
+                Imprimir mais informações sobre a
+                execução do comando ng new.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+    <hr>
+
+    <h3>ng serve</h3>
+
+    <p>Uma necessidade de todo desenvolvedor é ter um servidor HTTP em sua máquina para poder testar, de forma fácil e
+      imediata, as alterações realizadas nos arquivos do projeto. Pensando nesse problema, o Angular CLI disponibilizou
+      o comando <i>ng serve</i>.</p>
+
+    Exemplo de uso:
+
+    <pre class="linhacodigo">
+        1| ng server
+    </pre>
+
+    <p>Por padrão, o servidor é criado escutando na porta 4200, entretanto, é possível alterá-la usando alguns
+      parâmetros, como no exemplo abaixo.</p>
+
+    <p>Exemplo de uso de ng serve alterando a porta padrão:</p>
+
+    <pre class="linhacodigo">
+        1| ng serve --port 9090
+    </pre>
+
+    <p><strong>Parâmetros</strong></p>
+
+    <p>O comando ng serve pode receber alguns parâmetros, que estão detalhados na tabela abaixo.</p>
+
+    <div class="responsive-table">
+      <div class="responsive-table">
+        <table>
+          <thead>
+            <tr>
+              <th>
+                Parâmetro
+              </th>
+              <th>
+                Descrição
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                --target &lt;string&gt;
+              </td>
+              <td>
+                Define qual tipo de <em>build </em>deve ser gerado: (development,
+                production). Valor padrão: <em>development</em>.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                --environment
+              </td>
+              <td>
+                Define qual dos ambientes definidos em <em>/src/environments</em> deve ser usado na
+                geração do build.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                --aot
+              </td>
+              <td>
+                Criar o build usando compilação AOT
+                (Ahead of Time), ao invés de JIT (Just in Time). Esta opção melhora o
+                desempenho, pois todos artefatos são previamente compilados para Javascript.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                --sourcemaps
+              </td>
+              <td>
+                Criar arquivos de source map (arquivos
+                com extensão .map).
+              </td>
+            </tr>
+            <tr>
+              <td>
+                --base-href &lt;string&gt; *
+              </td>
+              <td>
+                Altera a tag base-href no arquivo
+                index.html para o valor informado.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                --deploy-url &lt;string&gt; *
+              </td>
+              <td>
+                URL na qual a aplicação será
+                implantada.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                --verbose
+              </td>
+              <td>
+                Exibe mais informações sobre a execução
+                do comando.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                --i18n-file &lt;string&gt;
+              </td>
+              <td>
+                Informar onde se encontra o arquivo de
+                internacionalização (i18n).
+              </td>
+            </tr>
+            <tr>
+              <td>
+                --i18n-format &lt;string&gt;
+              </td>
+              <td>
+                Informar qual o formato que se encontra
+                o arquivo de internacionalização indicado no comando --i18n-file.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                --locale &lt;string&gt;
+              </td>
+              <td>
+                Informar qual locale deve ser usado
+                para internacionalização.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                --extract-css
+              </td>
+              <td>
+                Por padrão, o Angular compila os
+                estilos dentro de arquivos JS. Este parâmetro informa que esses estilos devem
+                ser colocados dentro de arquivos CSS.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                --watch
+              </td>
+              <td>
+                Recriar o build quando forem
+                encontradas mudanças. Valor padrão: true.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                --poll &lt;number&gt;
+              </td>
+              <td>
+                Define o período, em milissegundos, que
+                será usado para verificar se ocorreram mudanças no projeto.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                -app &lt;string&gt;
+              </td>
+              <td>
+                Define qual das aplicações definidas no
+                arquivo <em>angular-cli.json</em> deve ser
+                usada para ser disponibilizada no servidor.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                --port &lt;number&gt;
+              </td>
+              <td>
+                Define qual porta o servidor escutará.
+                Valor padrão: 4200.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                --host &lt;string&gt;
+              </td>
+              <td>
+                Por padrão, o servidor é acessível
+                apenas na própria máquina onde está sendo executado. Com este comando é
+                possível informar que ele pode ser acessado através de outras interfaces de
+                rede.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                --ssl
+              </td>
+              <td>
+                Iniciar o servidor com suporte a SSL
+                (HTTPS).
+              </td>
+            </tr>
+            <tr>
+              <td>
+                --ssl-key &lt;string&gt;
+              </td>
+              <td>
+                Informar a chave privada para usar nas
+                conexões SSL.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                --ssl-cert &lt;string&gt;
+              </td>
+              <td>
+                Caminho para o certificado para ser
+                usado nas conexões SSL.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                --open
+              </td>
+              <td>
+                Abrir o navegador apontando para o
+                endereço do servidor.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                --live-reload
+              </td>
+              <td>
+                Informa se deve recarregar a aplicação
+                no navegador sempre que forem encontradas mudanças no projeto.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+    <hr>
+
+    <h3>ng generate component &lt;nome do componente&gt;</h3>
+
+    <p>Um dos artefatos mais importantes para o desenvolvimento com Angular, um componente pode ser criado de forma
+      bastante simples, utilizando o comando ng generate component &lt;nome&gt;.</p>
+
+    <pre class="linhacodigo">
+        1| ng generate component favorito
+    </pre>
+
+    <p>Com esse comando, além de criar um novo diretório e os quatro arquivos necessários para um componente, ele também
+      atualiza o arquivo app.module.ts, com o objetivo de incluir nele os dados necessárias para informar ao Angular
+      sobre esse novo componente.</p>
+
+
+    <p><strong>Parâmetros</strong></p>
+
+    <p>Para esse comando, podemos especificar os parâmetros apresentados abaixo.</p>
+
+    <div class="responsive-table">
+      <div class="responsive-table">
+        <table>
+          <thead>
+            <tr>
+              <th>
+                Parâmetro
+              </th>
+              <th>
+                Descrição
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <p><b>Parâmetro</b></p>
+              </td>
+              <td>
+                <p><b>Descrição</b></p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>--flat</p>
+              </td>
+              <td>
+                <p>Flag que indica se deve ser criado um
+                  diretório no qual os arquivos do componente serão colocados. Valor padrão:
+                  true.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>--inline-style</p>
+              </td>
+              <td>
+                <p>Colocar os estilos (CSS) inline, dentro
+                  do próprio arquivo<em> ts</em>,<em> </em>ao invés de criar um arquivo em
+                  separado para eles. Valor padrão: false. </p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>--inline-template</p>
+              </td>
+              <td>
+                <p>Colocar os templates inline, dentro do
+                  próprio arquivo<em> ts</em>, ao invés de
+                  criar um arquivo em separado. Valor padrão: false. </p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>--prefix &lt;string&gt;</p>
+              </td>
+              <td>
+                <p>Define o prefixo do seletor do
+                  componente. Caso não informado, é utilizado o prefixo padrão da aplicação
+                  (valor "app" ou outro definido a partir do parâmetro <em>prefix</em> do comando <em>ng new</em>).</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>--spec</p>
+              </td>
+              <td>
+                <p>Define se o arquivo de teste com
+                  extensão .spec.ts deve ser criado. Valor padrão: true.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>--view-encapsulation &lt;string&gt;</p>
+              </td>
+              <td>
+                <p>Informa a estratégia de encapsulamento
+                  da View, que é relacionada ao uso do Shadow DOM (HTML 5) por sua aplicação de
+                  forma nativa ou emulada. </p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>--change-detection &lt;string&gt;</p>
+              </td>
+              <td>
+                <p>Define a estratégia de detecção de
+                  mudanças que o componente deve usar.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>--skip-import</p>
+              </td>
+              <td>
+                <p>Define se o novo componente deve ser
+                  automaticamente importado no módulo para o qual ele foi criado. Caso contrário,
+                  será necessário importá-lo manualmente.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>--module &lt;string&gt;</p>
+              </td>
+              <td>
+                <p>Define para qual módulo da aplicação
+                  este componente deve ser criado.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>--export</p>
+              </td>
+              <td>
+                <p>Define se o componente é visível para
+                  outros módulos.</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <p>--app &lt;string&gt;</p>
+              </td>
+              <td>
+                <p>É possível definir várias aplicações no
+                  arquivo <em>angular-cli.json</em> contendo
+                  diferentes configurações. Este parâmetro especifica para qual dessas
+                  aplicações o componente deve ser criado. Por padrão, é a primeira aplicação
+                  informada no arquivo <em>angular-cli.json</em>.</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+    <hr>
+
+    <h3>ng generate service &lt;nome do service&gt;</h3>
+
+    <p>Os serviços são úteis para separar toda a lógica que não está relacionada à visão em classes separadas como, por
+      exemplo, o acesso a uma API para obter dados para exibição na tela. Para criar um serviço usando o CLI, basta
+      executar o comando <i>ng generate service</i>.
+
+
+      <p><strong>Parâmetros</strong></p>
+
+      <p>Para esse comando, podemos especificar os parâmetros apresentados abaixo.</p>
+
+      <div class="responsive-table">
+        <div class="responsive-table">
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  Parâmetro
+                </th>
+                <th>
+                  Descrição
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <p>--flat</p>
+                </td>
+                <td>
+                  <p>Flag que indica se deve ser criado um
+                    diretório no qual os arquivos do módulo serão colocados. Valor padrão: true.</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>--spec</p>
+                </td>
+                <td>
+                  <p>Define se deve ser gerado o arquivo de
+                    testes (arquivo com extensão .spec.ts).</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>--app &lt;string&gt;</p>
+                </td>
+                <td>
+                  <p>É possível definir várias aplicações no
+                    arquivo <em>angular-cli.json</em> contendo
+                    diferentes configurações. Este parâmetro especifica para qual dessas
+                    aplicações o módulo deve ser criado. Por padrão, é a primeira aplicação
+                    informada no arquivo <em>angular-cli.json</em>.</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>--module &lt;string&gt;</p>
+                </td>
+                <td>
+                  <p>Define para qual módulo da aplicação
+                    este guard deve ser criado.</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <hr>
+
+      <h3>Instalando bibliotecas (bootstrap, jquery, materialize, lodash)</h3>
+
+      <p>O npm é um gerenciador de pacotes para JavaScript. Para usar o npm é instalado junto com o Node.js, logo você precisa instalar o Node.js para que você consiga rodar os comandos do npm.</p>
+      <p>O primeiro passo é instalar o Bootstrap e jquery com o seguinte comando:
+
+
+
+    <pre class="linhacodigo">
+        1| npm install --save bootstrap@4 jquery
+    </pre>
+
+    <p>Após a instalação, abra o angular.json da sua apricação e adicione os arquivos do Bootstrap nos styles e scripts que ficam no caminho architect.build.options conforme abaixo. Você precisa colocar os arquivos na mesma ordem abaixo.
+
+    <p>
+    "styles": [<br>
+    &nbsp;&nbsp;&nbsp;"node_modules/bootstrap/dist/css/bootstrap.css",<br>
+    &nbsp;&nbsp;&nbsp;"src/styles.css"<br>
+    ],<br>
+    "scripts": [<br>
+    &nbsp;&nbsp;&nbsp;"node_modules/jquery/dist/jquery.js",<br>
+    &nbsp;&nbsp;&nbsp;"node_modules/bootstrap/dist/js/bootstrap.js"<br>
+    ]<br>
+    </p>
+
+
+  </section>
+</main>

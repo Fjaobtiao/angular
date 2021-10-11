@@ -1,0 +1,144 @@
+<div class="bread" style="background-color: rgb(196, 200, 202);
+height: 600px;
+color: rgb(255, 255, 255);
+background-image: url(../../assets/images/bg-top-02.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+background-attachment: scroll;
+background-position: center center;
+padding-top: 35px;
+margin-top: -200px">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1>Filter & Pipes</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<main class="pageinter">
+  <section class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="titpage">Filter</div>
+        <p>Filtros servem para formatar dados. Eles são utilizados nos templates dos componentes, geralmente para
+          apresentar datas e valores monetários em um formato familiar para os usuários.</p>
+
+        <p>Por exemplo, com o filtro date é possível formatar uma data para um formato familiar para o usuário, como
+          vemos no código abaixo.</p>
+
+        <p>Nele temos a propriedade hoje do componente AppComponent sendo apresentada de duas formas. A primeira delas é
+          sem nenhum filtro, onde usamos a sintaxe conhecida &#123; &#123; hoje &#125; &#125; para apresentar a
+          propriedade. A segunda é aplicando o filtro date e para fazer isso usamos a sintaxe &#123; &#123; hoje &#124;
+          date &#125; &#125; , onde &#124; é o operador pipe e date é o filtro que queremos aplicar.</p>
+
+        <div class="code-area">
+          <div class="pre_js">
+            <div>
+              <pre style="white-space:pre;"
+                class="line-numbers pre_js"><code class="pre_js"><span class="token comment">// app.component.ts</span>
+            <span class="token keyword module">import</span> <span class="token punctuation">&#123;</span> <span class="token maybe-class-name">Component</span> <span class="token punctuation">&#125;</span> <span class="token keyword module">from</span> <span class="token string">'@angular/core'</span><span class="token punctuation">;</span>
+            
+            @<span class="token function"><span class="token maybe-class-name">Component</span></span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+              selector<span class="token operator">:</span> <span class="token string">'app-root'</span><span class="token punctuation">,</span>
+              templateUrl<span class="token operator">:</span> <span class="token string">'./app.component.html'</span><span class="token punctuation">,</span>
+              styleUrls<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'./app.component.css'</span><span class="token punctuation">]</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+            <span class="token keyword module">export</span> <span class="token keyword">class</span> <span class="token class-name">AppComponent</span> <span class="token punctuation">&#123;</span>
+              hoje <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token number">1989</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">19</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span>
+            
+            <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> app<span class="token punctuation">.</span><span class="token property-access">component</span><span class="token punctuation">.</span><span class="token property-access">html</span> <span class="token operator">--</span><span class="token operator">&gt;</span>
+            <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> hoje <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
+            
+            <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> hoje <span class="token operator">|</span> date <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+            </div>
+          </div>
+          <p> Utilizando o filtro date nativo</p>
+        </div>
+
+        <p>O resultado desses valores sem filtro, &#123; &#123; hoje &#125; &#125; , e com filtro, &#123; &#123; hoje |
+          date &#125; &#125; pode ser visto na figura abaixo.
+
+          <p>&nbsp;</p>
+
+          <img src="../../assets/images/pipe-01.png" >
+
+          <p>&nbsp;</p>
+
+          <p>Note que Sun Feb 09 2020 12:38:03 GMT-0300 (Horário Padrão de Brasília) é como uma data e apresentada no
+            Angular por padrão, e que Mar 19, 1989 é esse mesmo dado formato pelo filtro.</p>
+
+          <p>Essa data ainda não está em um formato comum para nós brasileiros, mas veremos como resolver isso mais
+            adiante neste artigo.</p>
+
+
+      </div>
+    </div>
+
+
+
+    <hr>
+
+
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="titpage">Pipes</div>
+
+        <p>Com a versão 2 do Angular, os filtros passaram a se chamar pipes. Essa mudança foi, em sua maior parte,
+          semântica, ou seja, apenas uma troca de nome, já que a sintaxe para aplicar um filtro nas duas versões é bem
+          parecida.</p>
+
+        <h3>Pipes nativos do Angular</h3>
+
+        <p>No Angular, versão 2 em diante, temos diversos pipes nativos disponíveis. Os mais utilizados são:</p>
+
+        <ul>
+          <li>DatePipe para datas;</li>
+          <li>UpperCasePipe para tornar letras maiúsculas;</li>
+          <li>LowerCasePipe para tornar letras minúsculas;</li>
+          <li>CurrencyPipe para moedas.</li>
+        </ul>
+        <p>Sendo DatePipe e CurrencyPipe os mais usados entre todos.</p>
+
+        <h3>Parametrizando pipes</h3>
+
+        <p>Os pipes podem receber parâmetros, o que permite customizar ainda mais a formatação dos dados.</p>
+
+        <p>Relembrando, para aplicar qualquer pipe a um dado utilizamos a sintaxe &#123; &#123; dado | pipe &#125;
+          &#125; . Fizemos isso no código acima, onde utilizamos o pipe date. Contudo, embora a data tenha sido
+          formatada naquele exemplo ela ficou em um formato americano e não brasileiro. Para resolver isso podemos usar
+          parâmetros no pipe.</p>
+
+        <p>Com isso, a sintaxe muda um pouco, pois agora precisamos escrever &#123; &#123; dado |
+          pipe:”&#60;PARAMETROS”&#62; &#125; &#125; , sendo os parâmetros passados entre aspas e duplas por conversão.
+        </p>
+
+        <p>Por exemplo, para usar o formato de data dia/mês/ano, mais comum aqui no Brasil, podemos utilizar os
+          parâmetros dd/MM/yyyy com DatePipe, como mostra o código abaixo.</p>
+
+        <div class="code-area">
+          <div class="pre_js">
+            <div>
+              <pre style="white-space:pre;"
+                class="line-numbers pre_js"><code class="pre_js"><span class="token operator">&lt;</span>p<span class="token operator">&gt;</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> hoje <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span>
+
+            <span class="token operator">&lt;</span>p<span class="token operator">&gt;</span><span class="token punctuation">&#123;</span><span class="token punctuation">&#123;</span> hoje <span class="token operator">|</span> date<span class="token operator">:</span><span class="token string">"dd/MM/yyyy"</span> <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">&gt;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+            </div>
+          </div>
+          <div class="code-caption">Usando DatePipe com parâmetros</div>
+        </div>
+
+        <p>Como resultado na aplicação desses parâmetros a data será apresentada como 19/03/1989 (Figura 2) e não mais Mar 19, 1989, como vimos no primeiro código.</p>
+
+
+
+
+
+
+
+      </div>
+    </div>
+
+  </section>
+</main>
