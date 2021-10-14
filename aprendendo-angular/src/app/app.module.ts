@@ -12,6 +12,7 @@ import { DiretivasModule } from './diretivas';
 import { ServicesModule } from './services';
 import { PipesComponent } from './pipes/pipes.component';
 import { PipesModule } from './pipes';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { PipesModule } from './pipes';
     DiretivasModule,
     ServicesModule,
     PipesModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
