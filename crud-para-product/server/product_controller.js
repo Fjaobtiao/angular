@@ -1,14 +1,14 @@
 var express = require('express');
 var router = express.Router();
-var Department = require('./department');
+var Product = require('./product');
 
 
 router.post('/', (req, res)=>{
-    let dep = new Department({
+    let pro = new Product({
         name:req.body.name
     })
 
-    dep.save((err, d)=>{
+    pro.save((err, d)=>{
         if(err){
             res.status(500).send(err);
         }
@@ -20,7 +20,7 @@ router.post('/', (req, res)=>{
 
 
 router.get('/', (req, res)=>{
-    Department.find().exec((err, deps)=>{
+    Product.find().exec((err, deps)=>{
         if (err) {
             res.status(500).send(err);
         }
@@ -34,7 +34,7 @@ router.delete('/:id', async (req, res)=>{
     try {
         let id = req.params.id;
 
-        await Department.deleteOne({_id:id})
+        await Product.deleteOne({_id:id})
         res.status(200).send({});
         
     } catch (err) {
@@ -44,25 +44,25 @@ router.delete('/:id', async (req, res)=>{
 
 
 router.patch('/:id', async (req, res)=>{
-    Department.findById(req.params.id, (err, dep)=>{
+    Product.findById(req.params.id, (err, pro)=>{
         if (err) {
             res.status(500).send(err);
         }
         else{
-            if (!dep) {
-                res.status(404).send({dep});
+            if (!pro) {
+                res.status(404).send({pro});
             }
             else{
-                dep.name = req.body.name;
-                dep.save()
+                pro.name = req.body.name;
+                pro.save()
                 .then((d)=> res.status(200).send(d))
                 .catch((d)=> res.status(500).send(e))
 
                 
             }
-            // res.status(200).send(dep);
         }
     })
 })
 
 module.exports = router
+
