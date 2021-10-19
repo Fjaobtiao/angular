@@ -1,0 +1,52 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #272727;
+  font-weight: 300;
+}
+
+.newsletter {
+  background-color: #f7f7f5;
+  padding: 130px 0;
+}
+
+section.newsletter h4,
+section.newsletter form {
+  display: inline;
+  margin: 0 10px;
+}
+
+section.newsletter h4 {
+  font-size: 2.125rem;
+  line-height: 1.3;
+}
+section.newsletter form {
+  position: relative;
+}
+section.newsletter input {
+  height: 3.45em;
+  border: 1px solid #e2e2e2;
+  border-radius: 50px;
+  padding: .8em 1.2em;
+  transition: all 500ms ease;
+  width: 350px;
+}
+button.search-go {
+  position: absolute;
+  right: 0;
+  border-radius: 50px;
+  font-weight: 700;
+  height: 3.45em;
+  font-size: 16px !important;
+  padding: 0 1.8em !important;
+  box-shadow: 0 0 0 4em #191919 inset;
+  cursor: pointer;
+  width: auto !important;
+  color: #fff !important;
+  border: 0;
+  transition: all 300ms ease;
+}
+
+footer {
+  background-color: #f7f7f5;
+  padding-bottom: 60px;
+}
