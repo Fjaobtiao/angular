@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ContatoRoutes } from './pages/contato/contato-routing.module';
 import { HomeRoutes } from './home/home-routing.module';
 
 export const router : Routes = [
@@ -8,7 +9,8 @@ export const router : Routes = [
         redirectTo:'home',
         pathMatch: 'full'
     },
-    ...HomeRoutes
+    ...HomeRoutes,
+    ...ContatoRoutes
 ]; 
 
 

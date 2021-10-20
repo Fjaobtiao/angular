@@ -7,10 +7,12 @@ import { AppComponent } from './app.component';
 import { HomeModule } from './home';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ContatoComponent } from './pages/contato/contato.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ContatoComponent
   ],
   imports: [
     BrowserModule,
